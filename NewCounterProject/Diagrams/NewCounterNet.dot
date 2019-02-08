@@ -1,0 +1,31 @@
+digraph D {
+  HistoryRoomnode [label="HistoryRoom"]
+  CounterRoomnode [label="CounterRoom"]
+  ChangeCounternode [label="ChangeCounter",shape=box]
+  GoToCounternode [label="GoToCounter",shape=box]
+  GoToHistorynode [label="GoToHistory",shape=box]
+
+
+  ChangeCounternode -> CounterRoomnode [arrowhead=none,sametail=CounterRoomChangedCounterCounterRoom]
+  ChangeCounternode -> CounterRoomnode [label="ChangedCounter",sametail=CounterRoomChangedCounterCounterRoom]
+
+  ChangeCounternode -> HistoryRoomnode [arrowhead=none,sametail=HistoryRoomUpdateHistoryHistoryRoom]
+  ChangeCounternode -> HistoryRoomnode [label="UpdateHistory",sametail=HistoryRoomUpdateHistoryHistoryRoom]
+
+
+  GoToCounternode -> HistoryRoomnode [arrowhead=none,sametail=HistoryRoomWentToCounterCounterRoom]
+  GoToCounternode -> CounterRoomnode [label="WentToCounter",sametail=HistoryRoomWentToCounterCounterRoom]
+
+  GoToCounternode -> HistoryRoomnode [arrowhead=none,sametail=HistoryRoomsame,style=dashed]
+  GoToCounternode -> HistoryRoomnode [sametail=HistoryRoomsame,style=dashed]
+
+
+  GoToHistorynode -> CounterRoomnode [arrowhead=none,sametail=CounterRoomWentToHistoryHistoryRoom]
+  GoToHistorynode -> HistoryRoomnode [label="WentToHistory",sametail=CounterRoomWentToHistoryHistoryRoom]
+
+  GoToHistorynode -> CounterRoomnode [arrowhead=none,sametail=CounterRoomsame,style=dashed]
+  GoToHistorynode -> CounterRoomnode [sametail=CounterRoomsame,style=dashed]
+
+
+
+}
