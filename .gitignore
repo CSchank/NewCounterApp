@@ -24,6 +24,4 @@ cabal.project.local~
 *.elmo
 *.elmi
 elm-stuff
-index.html
-
 *~
